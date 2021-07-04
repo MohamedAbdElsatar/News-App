@@ -1,18 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/helper/data.dart';
+import 'package:news_app/helper/get_news.dart';
+import 'package:news_app/models/article_model.dart';
+import 'package:news_app/screens/category_news.dart';
 
 class CategoriesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        print('hello');
-      },
-      child: Container(
-        height: 70,
-        child: ListView.builder(
-          itemCount: category.length,
-          itemBuilder: (cxt, index) => Container(
+    return Container(
+      height: 70,
+      child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        itemCount: category.length,
+        itemBuilder: (cxt, index) => GestureDetector(
+          onTap: () {
+            Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) =>
+                    CategoryNews(category[index].title.toLowerCase())));
+          },
+          child: Container(
             height: 70,
             width: 120,
             margin: EdgeInsets.only(left: 15, bottom: 10),
@@ -40,7 +46,6 @@ class CategoriesScreen extends StatelessWidget {
               )
             ]),
           ),
-          scrollDirection: Axis.horizontal,
           // shrinkWrap: true,
         ),
       ),

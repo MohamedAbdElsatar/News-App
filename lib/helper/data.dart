@@ -1,6 +1,6 @@
 import 'package:news_app/models/category_model.dart';
 
-const DUMMY_CATEGORIES = const [
+const  DUMMY_CATEGORIES = const [
   CategoryModel(
       id: 'c1',
       title: "Business",
@@ -39,6 +39,6 @@ const DUMMY_CATEGORIES = const [
 ];
 
 
-List<CategoryModel> get  category {
+List<CategoryModel> get category {
   return DUMMY_CATEGORIES;
 }

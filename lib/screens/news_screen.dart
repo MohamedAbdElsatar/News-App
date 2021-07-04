@@ -41,7 +41,7 @@ class NewsScreen extends StatelessWidget {
               SizedBox(
                 height: 5,
               ),
-              Text(articles[index].content),
+              Text(articles[index].description),
             ],
           ),
         ),

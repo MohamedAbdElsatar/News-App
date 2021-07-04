@@ -20,9 +20,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
   getnews() async {
     News news = News();
-    await news.getNews();
-
+    await news.getNews(true);
     articles = news.news;
+     print(articles);
     setState(() {
       isLoading = false;
     });
